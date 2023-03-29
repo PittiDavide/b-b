@@ -36,6 +36,7 @@
                 <th>Data arrivo</th>
                 <th>Data partenza</th>
                 <th>Disdetta</th>
+                <th>elimina</th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +48,10 @@
         <td><?php echo $row['DataArrivo']; ?></td>
         <td><?php echo $row['DataPartenza']; ?></td>
         <td><?php echo $row['Disdetta']; ?></td>
+        <form action="delete.php" method="get">
+            <td><input type="submit" name="submit" value="elimina" class="btn"></td>
+            <input type="hidden" name = "id" value = "<?php echo $row['id']; ?>"></iput>
+        </form>
       </tr>
       <?php endwhile; ?>
     </tbody>
