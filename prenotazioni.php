@@ -2,9 +2,19 @@
 <html>
 <head>
 	<title>B&B prenotazioni</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="prenotazioni.css">
 </head>
 <body>
+    <?php  
+        $conn = mysqli_connect("localhost","root","","db_bed_and_breakfast");
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        // Query per recuperare le prenotazioni
+        $sql = "SELECT * FROM Prenotazioni";
+
+        $result = mysqli_query($conn, $sql);
+    ?>
 	<header>
 		<nav>
 			<ul>
@@ -15,5 +25,35 @@
 			</ul>
 		</nav>
 	</header>
+    <section  class="container">
+    <h2>Elenco prenotazioni</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Camera</th>
+                <th>Data arrivo</th>
+                <th>Data partenza</th>
+                <th>Disdetta</th>
+            </tr>
+        </thead>
+        <tbody>
+      <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+      <tr>
+        <td><a href="index.php"><?php echo $row['id']; ?></a></td>
+        <td><?php echo $row['Cliente']; ?></td>
+        <td><?php echo $row['Camera']; ?></td>
+        <td><?php echo $row['DataArrivo']; ?></td>
+        <td><?php echo $row['DataPartenza']; ?></td>
+        <td><?php echo $row['Disdetta']; ?></td>
+      </tr>
+      <?php endwhile; ?>
+    </tbody>
+  </table>
+</section>
+<footer>
+	<p>Tutti i diritti riservati &copy; PittiCompany</p>
+</footer>
 </body>
 </html>

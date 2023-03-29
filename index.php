@@ -48,7 +48,7 @@
 		</section>
 	</main>
 	<footer>
-		<p>Tutti i diritti riservati &copy; 2023</p>
+		<p>Tutti i diritti riservati &copy; PittiCompany</p>
 	</footer>
 </body>
 </html>
