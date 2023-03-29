@@ -1,0 +1,131 @@
+/* Barra di navigazione */
+header {
+	background-color: #333;
+	height: 60px;
+    
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+nav li {
+	display: inline-block;
+	margin: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Sezione Hero */
+.hero {
+	background-image: url(sfondo.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+    background-color: #f1f1f1;
+}
+
+.hero h1 {
+	font-size: 50px;
+	color: #000000;
+}
+
+.hero p {
+	font-size: 24px;
+	color: #000000;
+	margin: 20px;
+}
+
+.hero a {
+	background-color: #fff;
+	color: #333;
+	font-size: 18px;
+	padding: 10px 30px;
+	border-radius: 20px
+}
+/* Sezione Features */
+.features {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 50px 0;
+}
+
+.feature {
+	width: 30%;
+	margin-bottom: 50px;
+}
+
+.feature img {
+	width: 100%;
+	height: auto;
+}
+
+.feature h2 {
+	font-size: 24px;
+	color: #333;
+	margin: 20px 0;
+}
+
+.feature p {
+	font-size: 18px;
+	color: #666;
+}
+
+/* Sezione Gallery */
+.gallery {
+	background-color: #f9f9f9;
+	padding: 50px;
+	text-align: center;
+}
+
+.gallery h2 {
+	font-size: 36px;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+.gallery-images {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.gallery-images img {
+	width: 30%;
+	height: auto;
+	margin-bottom: 30px;
+	border-radius: 10px;
+	transition: all 0.3s ease-in-out;
+}
+
+.gallery-images img:hover {
+	transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
