@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User Page</title>
+	<title>inserimento utenti</title>
 	<link rel="stylesheet" type="text/css" href="user.css">
 </head>
 <body>
