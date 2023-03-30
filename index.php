@@ -4,6 +4,16 @@
 	<title>B&B Home Page</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<?php  
+        $conn = mysqli_connect("localhost","root","","db_bed_and_breakfast");
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        // Query per recuperare le prenotazioni
+        $sql = "SELECT * FROM camere";
+
+        $result = mysqli_query($conn, $sql);
+    ?>
 <body>
 	<header>
 		<nav>
@@ -39,12 +49,18 @@
 			</div>
 		</section>
 		<section class="gallery">
-			<h2>La nostre camere</h2>
-			<div class="gallery-images">
-				<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/194381287.jpg?k=68691a06101e3595754648015549fc758279d8dfd23c6ddf32e73d24d72b14c7&o=&hp=1" alt="Galleria 1">
-				<img src="https://b-galleria-frascati.hotelmix.it/data/Photos/OriginalPhoto/10009/1000963/1000963038/Galleria-Frascati-Rooms-And-Apartment-Exterior.JPEG" alt="Galleria 2">
-				<img src="https://media-cdn.tripadvisor.com/media/photo-s/09/66/d8/c4/b-b-galleria-frascati.jpg" alt="Galleria 3">
-			</div>
+            <h2>La nostre camere</h2>
+            <?php if (mysqli_num_rows($result) > 0) : ?>
+            <div class="slider">
+                <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                <div class="slide">
+                    <h3><?php echo $row['Numero']; ?></h3>
+                    <p><?php echo $row['Descrizione']; ?></p>
+                    <p><?php echo $row['Posti']; ?> posti letto</p>
+                </div>
+                <?php endwhile; ?>
+            </div>
+            <?php endif; ?>
 		</section>
 	</main>
 	<footer>
@@ -52,3 +68,43 @@
 	</footer>
 </body>
 </html>
+<!-- Collegamento ai file necessari -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<!-- Inizializzazione del plugin Slick -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.slider').slick({
+      dots: true, // mostra i pallini per la navigazione
+      arrows: true, // mostra le frecce per la navigazione
+      infinite: true, // abilita la ripetizione continua dello slider
+      speed: 300, // velocità di transizione tra le immagini
+      slidesToShow: 3, // numero di immagini visualizzate contemporaneamente
+      slidesToScroll: 3, // numero di immagini da scorrere alla volta
+      responsive: [ // definizione dei breakpoint per la versione mobile
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true,
+            arrows: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true
+          }
+        }
+      ]
+    });
+  });
+</script>

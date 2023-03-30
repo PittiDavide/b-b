@@ -107,7 +107,7 @@ nav a {
 .gallery-images img {
 	width: 30%;
 	height: auto;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 	border-radius: 10px;
 	transition: all 0.3s ease-in-out;
 }
