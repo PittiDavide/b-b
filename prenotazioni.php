@@ -30,7 +30,6 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Cliente</th>
                 <th>Camera</th>
                 <th>Data arrivo</th>
@@ -42,8 +41,10 @@
         <tbody>
       <?php while ($row = mysqli_fetch_assoc($result)) : ?>
       <tr>
-        <td><a href="index.php"><?php echo $row['id']; ?></a></td>
-        <td><?php echo $row['Cliente']; ?></td>
+        <form action="user.php" method="get">
+            <td><input type="submit" name="submit" value="<?php echo $row['Cliente']; ?>" class="btn"></td>
+            <input type="hidden" name = "cliente" value = "<?php echo $row['Cliente']; ?>" class="btn"></iput>
+        </form>
         <td><?php echo $row['Camera']; ?></td>
         <td><?php echo $row['DataArrivo']; ?></td>
         <td><?php echo $row['DataPartenza']; ?></td>
@@ -60,5 +61,5 @@
 <footer>
 	<p>Tutti i diritti riservati &copy; PittiCompany</p>
 </footer>
-</body>
+</body> 
 </html>
