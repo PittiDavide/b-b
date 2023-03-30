@@ -30,30 +30,38 @@
     <div class="container">
         <div class="column">
                 <h1>Dati utente</h1>
-                <p>
-                    <span class="label">Codice:</span>
-                    <span><?php echo $row['Codice']; ?></span>
-                </p>
-                <p>
-                    <span class="label">Cognome:</span>
-                    <span><?php echo $row['Cognome']; ?></span>
-                </p>
-                <p>
-                    <span class="label">Nome:</span>
-                    <span><?php echo $row['Nome']; ?></span>
-                </p>
-                <p>
-                    <span class="label">Indirizzo:</span>
-                    <span><?php echo $row['Indirizzo']; ?></span>
-                </p>
-                <p>
-                    <span class="label">Telefono:</span>
-                    <span><?php echo $row['Telefono']; ?></span>
-                </p>
-                <p>
-                    <span class="label">Email:</span>
-                    <span><?php echo $row['Email']; ?></span>
-                </p>
+                <form action="deleteUser.php" method="get">
+                    <input type="hidden" name = "codice" value = "<?php echo $row['Codice']; ?>"></iput>
+                    <div class="position">
+                        <p>
+                            <span class="label">Codice:</span>
+                            <span><?php echo $row['Codice']; ?></span>
+                        </p>
+                        <p>
+                            <span class="label">Cognome:</span>
+                            <span><?php echo $row['Cognome']; ?></span>
+                        </p>
+                        <p>
+                            <span class="label">Nome:</span>
+                            <span><?php echo $row['Nome']; ?></span>
+                        </p>
+                        <p>
+                            <span class="label">Indirizzo:</span>
+                            <span><?php echo $row['Indirizzo']; ?></span>
+                        </p>
+                        <p>
+                            <span class="label">Telefono:</span>
+                            <span><?php echo $row['Telefono']; ?></span>
+                        </p>
+                        <p>
+                            <span class="label">Email:</span>
+                            <span><?php echo $row['Email']; ?></span>
+                        </p>
+                    </div>
+                    <div class="button">
+                        <input type="submit" name="submit" value="elimina" class="btn-custom">
+                    </div>
+                </form>
         </div>
     </div>
     <h1>Prenotazioni personali</h1>
