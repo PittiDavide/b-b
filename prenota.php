@@ -23,6 +23,7 @@
 				<li><a href="prenotazioni.php">Prenotazioni</a></li>
 				<li><a href="inserimento.php">Account</a></li>
 				<li><a href="prenota.php">Prenota</a></li>
+                <li><a href="camere.php">Camere</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -35,36 +36,56 @@
                             <span class="label">Identificativo:</span>
                             <span><input type="text" name="id"></span>
                         </p>
-                        <p>
-                            <span class="label">Cliente:</span>
-                            <?php while ($row = mysqli_fetch_assoc($result2)) : ?>
-                            <input type="radio" name="cliente" value="<?php echo $row['Codice']; ?>">
-                            <label for="html"><?php echo $row['Codice']; ?></label><br>
-                            <?php endwhile; ?>
-                        </p>
-                        <p>
-                        <span class="label">Camera:</span>
-                            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-                            <input type="radio" name="camera" value="<?php echo $row['numero']; ?>">
-                            <label for="html"><?php echo $row['numero']; ?></label><br>
-                            <?php endwhile; ?>
-                        </p>
-                        <p>
-                            <span class="label">Data di arrivo:</span>
-                            <span><input type="date" name="DataArrivo"></span>
-                        </p>
-                        <p>
-                            <span class="label">Data di partenza:</span>
-                            <span><input type="date " name="DataPartenza"></span>
-                        </p>
-                        <p>
-                            <span class="label">Disdetta:</span>
-                            <span><input type="text" name="disdetta"></span>
-                        </p>
-                        <p>
-                            <span class="label">Documento:</span>
-                            <span><input type="text" name="documento"></span>
-                        </p>
+                        <div class="element">
+                            <div class="element">
+                                <span class="label">Cliente:</span>
+                                <div class= "client">
+                                    <?php while ($row = mysqli_fetch_assoc($result2)) : ?>
+                                    <input type="radio" name="cliente" value="<?php echo $row['Codice']; ?>">
+                                    <label for="html"><?php echo $row['Codice']; ?></label><br>
+                                    <?php endwhile; ?>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <span class="label">Camera:</span>
+                                <div class="client">
+                                    <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                                    <input type="radio" name="camera" value="<?php echo $row['numero']; ?>">
+                                    <label for="html"><?php echo $row['numero']; ?></label><br>
+                                    <?php endwhile; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "element2">
+                            <div>
+                                <p>
+                                    <span class="label">Data di arrivo:</span>
+                                </p>
+                                <p>
+                                    <span class="label">Data di partenza:</span>
+                                </p>
+                                <p>
+                                    <span class="label">Disdetta:</span>
+                                </p>
+                                <p>
+                                    <span class="label">Documento:</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span><input type="date" name="DataArrivo"></span>
+                                </p>
+                                <p>
+                                    <span><input type="date " name="DataPartenza"></span>
+                                </p>
+                                <p>
+                                    <span><input type="text" name="disdetta"></span>
+                                </p>
+                                <p>
+                                    <span><input type="text" name="documento"></span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div class="button">
                         <input type="submit" name="submit" value="invia" class="btn-custom-accept">

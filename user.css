@@ -93,3 +93,13 @@ footer {
     border-color: #FF0000;
     border-radius: 4px;
 }
+
+.element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.element2 {
+  display: flex;
+  flex-direction: row;
+}

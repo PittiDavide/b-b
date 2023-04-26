@@ -22,6 +22,7 @@
 				<li><a href="prenotazioni.php">Prenotazioni</a></li>
 				<li><a href="inserimento.php">Account</a></li>
 				<li><a href="prenota.php">Prenota</a></li>
+                <li><a href="camere.php">Camere</a></li>
 			</ul>
 		</nav>
 	</header>

@@ -14,5 +14,6 @@
 
     $result = mysqli_query($conn, $quary);
     $quary = "INSERT INTO `soggiorni`(`Prenotazione`, `Cliente`, `Documento`) VALUES ('$id', '$cliente' ,'$documento')";
+    $result = mysqli_query($conn, $quary);
     header("Location: index.php");
 ?>
