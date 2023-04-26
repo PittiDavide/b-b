@@ -55,7 +55,7 @@
                         </p>
                         <p>
                             <span class="label">Data di partenza:</span>
-                            <span><input type="date" name="DataPartenza"></span>
+                            <span><input type="date " name="DataPartenza"></span>
                         </p>
                         <p>
                             <span class="label">Disdetta:</span>
